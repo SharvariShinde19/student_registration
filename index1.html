@@ -1,0 +1,60 @@
+
+<html>
+<head>
+<title>Student Registration</title>
+
+<style>
+body { background: lightblue; text-align: center; }
+form { background: white; padding: 20px; width: 250px; margin: auto; }
+input, button { padding: 8px; margin: 5px; }
+</style>
+
+</head>
+
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form onsubmit="return validate()">
+
+Name: <input type="text" id="name"><br><br>
+
+Email: <input type="text" id="email"><br><br>
+
+Mobile: <input type="text" id="mobile"><br><br>
+
+Password: <input type="password" id="pass"><br><br>
+
+<button type="submit">Register</button>
+
+</form>
+
+<script>
+function validate()
+{
+    let n = document.getElementById("name").value;
+    let e = document.getElementById("email").value;
+    let m = document.getElementById("mobile").value;
+    let p = document.getElementById("pass").value;
+
+    if(n == "")
+        alert("Enter Name");
+
+    else if(!e.includes("@"))
+        alert("Enter Valid Email");
+
+    else if(m.length != 10 || isNaN(m))
+        alert("Enter 10 Digit Mobile");
+
+    else if(p.length < 8)
+        alert("Password must be 8 characters");
+
+    else
+        alert("Registration Successful");
+
+    return false;
+}
+</script>
+
+</body>
+</html>

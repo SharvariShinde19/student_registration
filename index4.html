@@ -1,0 +1,57 @@
+
+<html>
+<head>
+<title>To-Do List</title>
+
+<style>
+body 
+{
+    background: lightblue;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<h1>To-Do List</h1>
+
+Enter task:<input type="text" id="task">
+
+<button onclick="add()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+function add() {
+    let t = document.getElementById("task").value;
+
+    if(t == "") {
+        alert("Enter a task");
+    }
+    else {
+        let li = document.createElement("li");
+
+        li.innerHTML = t;
+
+        li.onclick = function() {
+            li.style.textDecoration = "line-through";
+        };
+
+        let b = document.createElement("button");
+        b.innerHTML = "Delete";
+
+        b.onclick = function() {
+            li.remove();
+        };
+
+        li.appendChild(b);
+        document.getElementById("list").appendChild(li);
+
+        document.getElementById("task").value = "";
+    }
+}
+</script>
+
+</body>
+</html>
