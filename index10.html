@@ -1,0 +1,23 @@
+<html>
+<body style="text-align:center;background:lightblue">
+<h2>Login Form</h2>
+
+Username: <input id="u"><br><br>
+Password: <input type="password" id="p"><br><br>
+<button onclick="login()">Login</button>
+
+<script>
+function login() {
+    let u = document.getElementById("u").value;
+    let p = document.getElementById("p").value;
+
+    if(u == "" || p == "")
+        alert("Enter all fields");
+    else if(u == "admin" && p == "1234")
+        alert("Login Successful");
+    else
+        alert("Invalid Login");
+}
+</script>
+</body>
+</html>
